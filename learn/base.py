@@ -21,6 +21,7 @@ print ("----------------")
 # else:
 #     print('00后')
 
+# list example
 names =['Michael','Bob','Tracy']
 for name in names:
     print(name)
@@ -32,3 +33,7 @@ while n <len(L):
     print(L[n])
     n = n + 1
 
+# tuple example
+
+classmates = ('Michael', 'Bob', 'Tracy')
+print (classmates)
