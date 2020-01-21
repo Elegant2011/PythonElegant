@@ -50,24 +50,65 @@ def calc_change(*number):
 def person(name, age, **kw):
     print('name', name, 'age', age, 'other', kw)
 
+
 def product(*args):
     x = 1
-    if len(args)==0:
-       raise TypeError()
+    if len(args) == 0:
+        raise TypeError()
     for i in args:
-      x = i * x
+        x = i * x
     return x
+
 
 def fact(n):
     if n == 1:
         return 1
-    return n * fact(n-1)
+    return n * fact(n - 1)
+
 
 # 汉诺塔问题
-def move(n,a,b,c):
+def move(n, a, b, c):
     if n == 1:
-     print (n,a,'-->',c)
+        print(n, a, '-->', c)
     else:
-      move(n-1,a,c,b)
-      print (n,a,'-->',c)
-      move(n-1,b,a,c)
+        move(n - 1, a, c, b)
+        print(n, a, '-->', c)
+        move(n - 1, b, a, c)
+
+
+def calc_sum(*args):
+    sum = 0
+    for n in args:
+        sum = n + sum
+    return sum
+
+
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = n + ax
+        return ax
+
+    return sum
+
+
+def createCounter():
+    n = 0
+    def counter():
+        nonlocal n
+        n = n + 1
+        return n
+    return counter
+
+
+def log(func):
+    def wrapper(*args, **kwargs):
+        print('call %s():' % func.__name__)
+        return func(*args, **kwargs)
+    return wrapper
+
+@log
+def now():
+    print('2015-3-25')
+

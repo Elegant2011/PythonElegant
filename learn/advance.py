@@ -1,4 +1,4 @@
-#from collections import Iterable
+from collections.abc import Iterable
 
 L = ['Michael','Sarah','Tracy','Bob','Jack']
 print (L[0:3])
@@ -24,7 +24,7 @@ d = {'a': 1, 'b': 2, 'c': 3}
 for key in d:
     print(key)
 
-#print (isinstance('abc', Iterable) ) # str是否可迭代
+print (isinstance('abc', Iterable) ) # str是否可迭代
 
 def findMinAndMax(L):
      if len(L)==0:
@@ -56,3 +56,38 @@ print([x * x for x in range(1,11)])
 print([x * x for x in range(1,11)if x %2 == 0])
 
 print([m + n for m in 'ABC' for n in 'XYZ'])
+
+def add(x, y):
+    return x + y
+def sub(x, y):
+    return x - y
+def mult(x, y):
+    return x * y
+def calculator(opcode):
+    if opcode == 1:
+       return add
+    elif opcode == 2:
+       return sub
+    else:
+       return mult
+
+my_calc = calculator(2)
+print(my_calc(5,4))
+
+my_calc = calculator(9)
+print(my_calc(5,4))
+
+multUse = lambda x,y : x*y
+print("multuse 2,7")
+print(multUse(2,7))
+
+
+
+def triangles():
+    L = [1]
+
+    while True:
+
+        yield L
+
+        L = [1] + [L[n]+L[n+1] for n in range(len(L)-1)] + [1]
