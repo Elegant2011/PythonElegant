@@ -8,6 +8,7 @@ from function_base import person
 from function_base import move
 from function_base import lazy_sum
 from function_base import now
+from function_base import moveUse
 #import sys
 import datetime as dt
 from function_base import fact
@@ -51,7 +52,9 @@ print(fact(10))
 
 # 汉诺塔问题
 move(2,'A','B','C')
-move(3,'A','B','C')
+print('----------')
+# moveUse(2,'A','B','C')
+# move(3,'A','B','C')
 
 # 返回函数作为参数
 f = lazy_sum(1,3,5,7,9)
