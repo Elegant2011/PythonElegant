@@ -115,10 +115,5 @@ def now():
 
 
 # 汉诺塔练习
-def moveUse(n,a,b,c):
-    # if n == 1:
-    #     print(a,'-->',c)
-    # else :
-    #     moveUse(n-1,a,c,b)
-    #     print(a,'-->',c)
-    #     moveUse(n-1,b,a,c)
+# def moveUse(n,a,b,c):
+
